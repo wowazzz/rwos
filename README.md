@@ -11,7 +11,7 @@ Not on CRAN, install directly from GitHub :
 
 ```r
 install.packages("devtools")  # if required
-devtools::install_github("juba/rwos")
+devtools::install_github("wowazzz/rwos")
 ```
     
 ## Usage
