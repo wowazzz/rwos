@@ -1,7 +1,6 @@
 #' Authenticate to the Web of Science Web Services Lite API
 #'
-#' @param username optional user name
-#' @param password optional password
+#' @param asid optional authorization string
 #'
 #' @return a session identifier
 #'
@@ -16,7 +15,7 @@ wos_authenticate <- function(asid = NULL) {
     'Content-Type' = "text/xml; charset=utf-8",
     SOAPAction = ""
   )
-  if (!is.null(username) && !is.null(password)) {
+  if (!is.null(asid)) {
     auth <- asid
     headers <- c(headers,
                  Authorization = paste0("Basic ", auth)
