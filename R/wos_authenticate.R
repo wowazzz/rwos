@@ -9,7 +9,7 @@
 #' @import RCurl
 #' @import xml2
 
-wos_authenticate <- function(username = NULL, password = NULL) {
+wos_authenticate <- function(asid = NULL) {
 
   headers <- c(
     Accept = "multipart/*",
@@ -17,7 +17,7 @@ wos_authenticate <- function(username = NULL, password = NULL) {
     SOAPAction = ""
   )
   if (!is.null(username) && !is.null(password)) {
-    auth <- RCurl::base64(paste(username, password, sep = ":"))
+    auth <- asid
     headers <- c(headers,
                  Authorization = paste0("Basic ", auth)
                  )
